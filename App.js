@@ -13,6 +13,9 @@ const Navigator = createStackNavigator(
   {
     Feeds: { screen: Feeds },
     Detalhes: { screen: Details }
+  },
+  {
+    headerMode: 'none'
   }
 );
 
@@ -21,7 +24,7 @@ const Container = createAppContainer(Navigator);
 export default function App() {
   return (
     <MenuProvider>
-      <StatusBar></StatusBar>
+      <StatusBar barStyle="dark-content" backgroundColor="#FF0000" />
       <Container></Container>
     </MenuProvider>
   )

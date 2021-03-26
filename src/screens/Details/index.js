@@ -1,16 +1,26 @@
 import React from 'react';
-
+import { View  } from 'react-native';
+import { Header } from 'react-native-elements';
 import { SliderBox } from 'react-native-image-slider-box';
 import CardView from 'react-native-cardview';
 
 import Icon from 'react-native-vector-icons/AntDesign';
 
+import avatar from "../../assets/imgs/avatar.jpeg";
+
 import {
+    Avatar,
     NomeProduto,
+    NomeEmpresa,
     DescricaoProduto,
     PrecoProduto,
-    Likes
+    Likes,
+    CentralizadoNaMesmaLinha,
+    EsquerdaDaMesmaLinha,
+    Espacador
 } from "../../assets/styles";
+
+import Compartilhador from "../../components/Compartilhador";
 
 import feedsEstaticos from '../../assets/dicionarios/feeds.json';
 import slide1 from '../../assets/imgs/slide1.jpeg';
@@ -70,17 +80,48 @@ export default class Details extends React.Component {
 
         if (feed) {
             return (
-                <CardView
-                    cardElevation={2}
-                    cornerRadius={0}>
-                    {this.mostrarSlides()}
-                    <NomeProduto>{feed.product.name}</NomeProduto>
-                    <DescricaoProduto>{feed.product.description}</DescricaoProduto>
-                    <PrecoProduto>{"R$" + feed.product.price}</PrecoProduto>
-                    <Icon name="heart" size={18}>
-                        <Likes>{feed.likes}</Likes>
-                    </Icon>
-                </CardView>
+                <>
+                    <Header
+                        leftComponent={
+                            <Icon size={28} name="left" onPress={() => {
+                                this.props.navigation.goBack();
+                            }} />
+                        }
+                        centerComponent={
+                            <>
+                                <CentralizadoNaMesmaLinha>
+                                    <Avatar source={avatar} />
+                                    <NomeEmpresa>{feed.company.name}</NomeEmpresa>
+                                </CentralizadoNaMesmaLinha>
+                            </>
+                        }
+                        rightComponent={
+                            <>
+                                <Compartilhador feed={feed} />
+                            </>
+                        }
+                    >
+
+                    </Header>
+                    <CardView
+                        cardElevation={2}
+                        cornerRadius={0}>
+                        {this.mostrarSlides()}
+                        <View style={{ padding: 10 }}>
+                            <Espacador />
+                            <NomeProduto>{feed.product.name}</NomeProduto>
+                            <DescricaoProduto>{feed.product.description}</DescricaoProduto>
+                            <Espacador />
+                            <EsquerdaDaMesmaLinha>
+                                <PrecoProduto>{"R$" + feed.product.price}   </PrecoProduto>
+                                <Icon name="heart" size={18}>
+                                    <Likes> {feed.likes}</Likes>
+                                </Icon>
+                            </EsquerdaDaMesmaLinha>
+                            <Espacador />
+                        </View>
+                    </CardView>
+                </>
             );
         } else {
             return (null);

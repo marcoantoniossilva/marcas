@@ -34,3 +34,43 @@ export const Likes = styled.Text`
     font-size: 16px;
     color: #59594a;
 `;
+
+export const EntradaNomeProduto = styled.TextInput`
+    height: 40px;
+    width: 100%;
+    background-color: #fff;
+    border-color: #c7c7c7;
+    border-width: 1;
+    border-radius: 8;
+`;
+
+export const CentralizadoNaMesmaLinha = styled.View`
+    flexDirection: row;
+    justify-content: center;
+    align-items: center;
+`;
+
+export const EsquerdaDaMesmaLinha = styled.View`
+    flexDirection: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+`;
+
+export const ContenedorMenu = styled.View`
+    flex: 1;
+    font-size: 18;
+    background-color: #fff;
+`;
+
+export const Espacador = styled.View`
+    flexDirection: row;
+    padding: 15px;
+`;
+
+export const DivisorMenu = styled.View`
+    marginVertical: 5;
+    marginHorizontal: 5;
+
+    border-bottom-width:1;
+    borderColor: #050505;
+`;

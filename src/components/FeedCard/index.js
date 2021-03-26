@@ -9,6 +9,7 @@ import {
     NomeProduto,
     DescricaoProduto,
     PrecoProduto,
+    EsquerdaDaMesmaLinha,
     Likes
 } from "../../assets/styles";
 
@@ -39,8 +40,10 @@ export default class FeedCard extends React.Component {
                 <Card>
                     <CardImage source={produto} />
                     <CardContent>
-                        <Avatar source={avatar} />
-                        <NomeEmpresa>{feed.company.name}</NomeEmpresa>
+                        <EsquerdaDaMesmaLinha>
+                            <Avatar source={avatar} />
+                            <NomeEmpresa>{feed.company.name}</NomeEmpresa>
+                        </EsquerdaDaMesmaLinha>
                     </CardContent>
                     <CardContent>
                         <NomeProduto>{feed.product.name}</NomeProduto>
@@ -49,10 +52,12 @@ export default class FeedCard extends React.Component {
                         <DescricaoProduto>{feed.product.description}</DescricaoProduto>
                     </CardContent>
                     <CardContent>
-                        <PrecoProduto>{"R$" + feed.product.price}</PrecoProduto>
-                        <Icon name="heart" size={18}>
-                            <Likes>{feed.likes}</Likes>
-                        </Icon>
+                        <EsquerdaDaMesmaLinha>
+                            <PrecoProduto>{"R$" + feed.product.price}   </PrecoProduto>
+                            <Icon name="heart" size={18}>
+                                <Likes> {feed.likes}</Likes>
+                            </Icon>
+                        </EsquerdaDaMesmaLinha>
                     </CardContent>
                 </Card>
             </TouchableOpacity>
