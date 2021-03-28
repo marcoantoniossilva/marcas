@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, ScrollView } from 'react-native';
+import { TouchableOpacity, ScrollView } from 'react-native-gesture-handler';
 import empresasEstatica from "../../assets/dicionarios/empresas.json";
 
 import {
@@ -29,7 +29,7 @@ export default class Menu extends React.Component {
         const { filtrar } = this.state;
 
         return (
-            <TouchableOpacity onPress={() => {
+            <TouchableOpacity key={empresa._id} onPress={() => {
                 filtrar(empresa)
             }}>
                 <EsquerdaDaMesmaLinha>

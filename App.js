@@ -24,8 +24,8 @@ const Container = createAppContainer(Navigator);
 export default function App() {
   return (
     <MenuProvider>
-      <StatusBar barStyle="dark-content" backgroundColor="#FF0000" />
-      <Container></Container>
+      <StatusBar barStyle="light-content" backgroundColor="#00ff00" translucent/>
+      <Container/>
     </MenuProvider>
   )
 }

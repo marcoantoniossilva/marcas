@@ -40,37 +40,36 @@ export const EntradaNomeProduto = styled.TextInput`
     width: 100%;
     background-color: #fff;
     border-color: #c7c7c7;
-    border-width: 1;
-    border-radius: 8;
+    border-width: 1px;
+    border-radius: 8px;
 `;
 
 export const CentralizadoNaMesmaLinha = styled.View`
-    flexDirection: row;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 `;
 
 export const EsquerdaDaMesmaLinha = styled.View`
-    flexDirection: row;
+    flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
 `;
 
 export const ContenedorMenu = styled.View`
-    flex: 1;
-    font-size: 18;
+    flex: 1px;
+    font-size: 18px;
     background-color: #fff;
 `;
 
 export const Espacador = styled.View`
-    flexDirection: row;
+    flex-direction: row;
     padding: 15px;
 `;
 
 export const DivisorMenu = styled.View`
-    marginVertical: 5;
-    marginHorizontal: 5;
+    margin: 5px;
 
-    border-bottom-width:1;
-    borderColor: #050505;
+    border-bottom-width:1px;
+    border-color: #050505;
 `;

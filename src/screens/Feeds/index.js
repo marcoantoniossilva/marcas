@@ -12,7 +12,8 @@ import {
     CentralizadoNaMesmaLinha
 } from "../../assets/styles";
 import Menu from "../../components/Menu";
-import DrawerLayout from "react-native-drawer-layout";
+//import DrawerLayout from "react-native-drawer-layout";
+import {DrawerLayout} from "react-native-gesture-handler";
 
 const FEEDS_POR_PAGINA = 4;
 
@@ -171,6 +172,8 @@ export default class Feeds extends React.Component {
                 renderNavigationView={() => <Menu filtragem={this.filtrarPorEmpresa} />}
             >
                 <Header
+
+                    backgroundColor={"#f00"}
                     leftComponent={
                         <Icon style={{}} size={28} name="menuunfold" onPress={() => {
                             this.mostrarMenu();
