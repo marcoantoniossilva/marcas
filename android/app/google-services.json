@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1029290334425",
+    "project_id": "marcas232323",
+    "storage_bucket": "marcas232323.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1029290334425:android:7d5908f054eab4bceb86c8",
+        "android_client_info": {
+          "package_name": "com.marcas232323"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1029290334425-b2asjl0scms885jnksnlu2mhk1tde5gt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.marcas232323",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "1029290334425-ip17d5d8fcov1gg1f0ulcpf8ic39fqf0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAs5Jns8ml9nvSCIkWxbXsWnY5VxukM5tU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1029290334425-ip17d5d8fcov1gg1f0ulcpf8ic39fqf0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

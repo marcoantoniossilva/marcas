@@ -64,7 +64,7 @@ export const ContenedorMenu = styled.View`
 
 export const Espacador = styled.View`
     flex-direction: row;
-    padding: 15px;
+    padding: 8px;
 `;
 
 export const DivisorMenu = styled.View`

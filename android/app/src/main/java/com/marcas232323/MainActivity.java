@@ -1,4 +1,4 @@
-package com.marcas;
+package com.marcas232323;
 
 import com.facebook.react.ReactActivity;
 
@@ -10,6 +10,6 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "marcas";
+    return "marcas232323";
   }
 }

@@ -1,10 +1,12 @@
 import React from 'react';
-import { View  } from 'react-native';
+import { View } from 'react-native';
 import { Header } from 'react-native-elements';
 import { SliderBox } from 'react-native-image-slider-box';
 import CardView from 'react-native-cardview';
 
 import Icon from 'react-native-vector-icons/AntDesign';
+import SyncStorage from "sync-storage";
+import Toast from "react-native-simple-toast";
 
 import avatar from "../../assets/imgs/avatar.jpeg";
 
@@ -35,7 +37,9 @@ export default class Details extends React.Component {
 
         this.state = {
             feedId: this.props.navigation.state.params.feedId,
-            feed: null
+            feed: null,
+
+            gostou: false
         }
     }
 
@@ -75,8 +79,35 @@ export default class Details extends React.Component {
         )
     }
 
-    render = () => {
+    like = () => {
         const { feed } = this.state;
+
+        feed.likes++;
+
+        this.setState({
+            feed: feed,
+            gostou: true
+        }, () => {
+            Toast.show("Obrigado pelo seu feedbak!", Toast.LONG);
+        });
+    }
+
+    dislike = () => {
+        const { feed } = this.state;
+        const usuarioo = SyncStorage.get("user");
+
+        console.log("Removendo o like do usuário: " + usuarioo.name);
+
+        feed.likes--;
+
+        this.setState({
+            feed: feed,
+            gostou: false
+        });
+    }
+
+    render = () => {
+        const { feed, gostou } = this.state;
 
         if (feed) {
             return (
@@ -96,9 +127,20 @@ export default class Details extends React.Component {
                             </>
                         }
                         rightComponent={
-                            <>
+                            <CentralizadoNaMesmaLinha>
                                 <Compartilhador feed={feed} />
-                            </>
+                                <Espacador />
+                                {gostou && <Icon name="heart" size={28} color={"#f00"} onPress={
+                                    () => {
+                                        this.dislike();
+                                    }
+                                } />}
+                                {!gostou && <Icon name="hearto" size={28} color={"#f00"} onPress={
+                                    () => {
+                                        this.like();
+                                    }
+                                } />}
+                            </CentralizadoNaMesmaLinha>
                         }
                     >
 
@@ -114,7 +156,7 @@ export default class Details extends React.Component {
                             <Espacador />
                             <EsquerdaDaMesmaLinha>
                                 <PrecoProduto>{"R$" + feed.product.price}   </PrecoProduto>
-                                <Icon name="heart" size={18}>
+                                <Icon name="heart" size={18} color={'#f00'}>
                                     <Likes> {feed.likes}</Likes>
                                 </Icon>
                             </EsquerdaDaMesmaLinha>
